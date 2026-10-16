@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic website of Raza Ul Mustafa, computer science professor and researcher at Loyola University New Orleans.">
+  <title>Raza Ul Mustafa | Academic Website</title>
+  <style>
+    :root {
+      --navy: #14243a;
+      --blue: #2459a9;
+      --blue-light: #edf4ff;
+      --ink: #263244;
+      --muted: #627084;
+      --line: #e2e8f0;
+      --paper: #ffffff;
+      --bg: #f6f8fb;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(20, 36, 58, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font: 16px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1080px; margin: auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand { color: var(--navy); font-weight: 750; letter-spacing: -.02em; white-space: nowrap; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 18px; font-size: .92rem; }
+    .nav-links a { color: var(--muted); font-weight: 600; }
+    .nav-links a:hover { color: var(--blue); text-decoration: none; }
+    .container { width: min(100% - 40px, 1000px); margin: 0 auto; }
+    .hero { padding: 76px 0 52px; }
+    .hero-card {
+      display: grid; grid-template-columns: 1fr 220px; gap: 42px; align-items: center;
+      padding: clamp(26px, 5vw, 52px); background: var(--paper);
+      border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow);
+    }
+    .eyebrow {
+      color: var(--blue); text-transform: uppercase; font-size: .78rem;
+      font-weight: 800; letter-spacing: .12em;
+    }
+    h1 { color: var(--navy); font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.12; letter-spacing: -.045em; margin: 10px 0 16px; }
+    .role { font-size: 1.12rem; color: var(--muted); margin: 0 0 20px; }
+    .intro { max-width: 650px; margin: 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px;
+      border-radius: 10px; font-weight: 700; border: 1px solid var(--blue);
+    }
+    .button.primary { background: var(--blue); color: white; }
+    .button.secondary { background: white; color: var(--blue); }
+    .portrait {
+      width: 200px; aspect-ratio: 1; border-radius: 50%; background: var(--blue-light);
+      border: 1px solid #d8e5fb; display: grid; place-items: center; text-align: center;
+      color: var(--blue); padding: 22px; font-size: .9rem; margin: auto;
+    }
+    main { padding-bottom: 54px; }
+    section { margin: 28px 0; }
+    .section-card {
+      background: var(--paper); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: clamp(24px, 4vw, 36px);
+    }
+    h2 { color: var(--navy); font-size: 1.55rem; letter-spacing: -.025em; margin: 0 0 18px; }
+    h3 { color: var(--navy); font-size: 1.08rem; margin: 0 0 7px; }
+    p { margin-top: 0; }
+    .muted { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .item { padding: 18px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 9px; padding: 0; list-style: none; margin: 16px 0 0; }
+    .tag-list li { background: var(--blue-light); color: #234c87; border-radius: 999px; padding: 5px 11px; font-size: .88rem; }
+    .publication { padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .publication:first-of-type { padding-top: 0; }
+    .publication:last-child { border-bottom: 0; padding-bottom: 0; }
+    .pub-meta { font-size: .92rem; color: var(--muted); margin: 4px 0 0; }
+    .footer { text-align: center; padding: 28px 20px 40px; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 720px) {
+      .nav-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .nav-links { gap: 12px; }
+      .hero { padding-top: 30px; }
+      .hero-card { grid-template-columns: 1fr; gap: 25px; }
+      .portrait { grid-row: 1; width: 140px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#home">Raza Ul Mustafa</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="hero" id="home">
+      <div class="hero-card">
+        <div>
+          <div class="eyebrow">Academic Website</div>
+          <h1>Raza Ul Mustafa, Ph.D.</h1>
+          <p class="role">Assistant Professor &amp; Director of Computer Science<br>
+            Department of Mathematics and Computer Science<br>
+            Loyola University New Orleans</p>
+          <p class="intro">
+            I teach computer science and conduct research in networked and immersive
+            multimedia systems, quality of experience (QoE), and the application of
+            data-driven and AI-based methods to understand technology performance.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#research">Explore Research</a>
+            <a class="button secondary" href="cv.pdf">View CV (PDF)</a>
+          </div>
+        </div>
+        <div class="portrait" aria-label="Photo placeholder">
+          Add your<br>professional photo
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section id="about">
+        <div class="section-card">
+          <h2>About Me</h2>
+          <p>
+            I am an Assistant Professor and Director of Computer Science at Loyola
+            University New Orleans. My work combines computer science education,
+            empirical experimentation, network measurement, and machine learning
+            to investigate how emerging technologies perform in real-world settings.
+          </p>
+          <p>
+            I am particularly interested in helping students develop strong
+            computational foundations and the ability to use modern tools critically,
+            creatively, and responsibly.
+          </p>
+          <p class="muted"><strong>Note:</strong> Edit this section to add your Ph.D. institution,
+            professional background, awards, and other biographical details.</p>
+        </div>
+      </section>
+
+      <section id="research">
+        <div class="section-card">
+          <h2>Research Interests</h2>
+          <div class="grid">
+            <article class="item">
+              <h3>Immersive Multimedia &amp; QoE</h3>
+              <p class="muted">Understanding user-perceived quality in 360-degree video and immersive streaming systems.</p>
+            </article>
+            <article class="item">
+              <h3>5G and Network Performance</h3>
+              <p class="muted">Analyzing how wireless network conditions relate to multimedia performance and user experience.</p>
+            </article>
+            <article class="item">
+              <h3>Machine Learning for Prediction</h3>
+              <p class="muted">Using data-driven methods to predict performance degradation and interpret system behavior.</p>
+            </article>
+            <article class="item">
+              <h3>AI and Responsible Computing</h3>
+              <p class="muted">Exploring practical AI applications, evaluation, and responsible use in computing and education.</p>
+            </article>
+          </div>
+          <ul class="tag-list" aria-label="Research keywords">
+            <li>Quality of Experience</li><li>360° Video</li><li>5G Networks</li>
+            <li>Machine Learning</li><li>AI</li><li>Network Measurement</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="publications">
+        <div class="section-card">
+          <h2>Selected Publications</h2>
+          <p class="muted">Replace or expand these entries with your final citation details and links to papers.</p>
+
+          <article class="publication">
+            <h3>From Radio Signal Dynamics to QoE Degradation Prediction in Immersive Streaming</h3>
+            <p class="pub-meta">IEEE 17th International Conference on Network of the Future (NoF), 2026.</p>
+            <p>Investigates the relationship between 5G radio measurements and quality-of-experience degradation in immersive video streaming.</p>
+            <a href="#contact">Add paper link</a>
+          </article>
+
+          <article class="publication">
+            <h3>Mobile 360° Video QoE: Empirical Analysis of 5G QoS Metrics</h3>
+            <p class="pub-meta">International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems (MSWiM), 2025.</p>
+            <p>Empirically analyzes how mobile network quality-of-service metrics relate to 360-degree video quality of experience.</p>
+            <a href="#contact">Add paper link</a>
+          </article>
+
+          <article class="publication">
+            <h3>Additional Publications</h3>
+            <p class="pub-meta">Add your other peer-reviewed papers, conference presentations, and preprints here.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="teaching">
+        <div class="section-card">
+          <h2>Teaching</h2>
+          <p>I teach computer science courses that emphasize programming fundamentals, problem-solving, and practical application.</p>
+          <div class="grid">
+            <article class="item">
+              <h3>Introduction to C++ Programming</h3>
+              <p class="muted">Programming fundamentals, control flow, functions, and computational problem-solving.</p>
+            </article>
+            <article class="item">
+              <h3>Computer Science Curriculum</h3>
+              <p class="muted">Curriculum development and student learning across foundational and advanced computing topics.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="cv">
+        <div class="section-card">
+          <h2>Curriculum Vitae</h2>
+          <p>For a complete overview of my academic appointments, education, publications, teaching, and service, see my CV.</p>
+          <a class="button primary" href="cv.pdf">Open CV (PDF)</a>
+          <p class="muted" style="margin: 14px 0 0; font-size: .92rem;">
+            Upload your CV to the same repository and name it <code>cv.pdf</code>, or update this link to match your file name.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-card">
+          <h2>Contact</h2>
+          <p><strong>Raza Ul Mustafa, Ph.D.</strong><br>
+            Assistant Professor and Director of Computer Science<br>
+            Department of Mathematics and Computer Science<br>
+            Loyola University New Orleans</p>
+          <p>
+            Email: <a href="mailto:YOUR-LOYOLA-EMAIL@loyno.edu">YOUR-LOYOLA-EMAIL@loyno.edu</a><br>
+            Office: Monroe Hall, Room 437
+          </p>
+          <p class="muted">Add links to your Google Scholar, ORCID, LinkedIn, GitHub, and institutional profile.</p>
+          <div class="actions">
+            <a class="button secondary" href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <a class="button secondary" href="https://orcid.org/" target="_blank" rel="noopener noreferrer">ORCID</a>
+            <a class="button secondary" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>© <span id="year">2026</span> Raza Ul Mustafa. Academic website.</p>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
